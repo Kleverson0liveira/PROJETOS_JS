@@ -1,9 +1,11 @@
-import entradaDados from 'readline-sync';
+const itensOpcionais = [
+  { nome: 'Pré som', valor: 800 },
+  { nome: 'Conta-giros', valor: 500 },
+  { nome: 'Desembaçador traseiro', valor: 1000 },
+  { nome: 'Ar quente', valor: 1800 },
+];
 
-console.log("Conversor de Milhas para Quilômetros: \n");
+const valorTotal = itensOpcionais.reduce( ( total, item ) => {
+    return total + item.valor;}, 0);
 
-let mi = entradaDados.question("Informe o valor em Milhas: ");
-
-let km = mi / 0.62137;
-
-console.log(mi+"mi equivale a "+km+"km");
+console.log('R$ ' + valorTotal.toFixed(2));
